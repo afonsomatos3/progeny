@@ -11,9 +11,9 @@ PROGENY evolves **interpretable symbolic expressions** and characterises each
 one by its precision, recall, and coverage, so an auditor gets the proxy rule
 itself, not just a verdict that one exists.
 
-This repository contains the core discovery tool for the MSc thesis *Finding
+This repository contains the core discovery tool for the MSc Work *Finding
 Multi-Attribute Proxies using Genetic Programming* (Instituto Superior Técnico,
-2026). The additional experiment drivers from the thesis (fitness sweep,
+2026). The additional experiment drivers from the Work (fitness sweep,
 leave-one-out grammar study, cross-architecture attribution, and the figure
 scripts) are not included here; this repository is the tool for a standard
 discovery run.
