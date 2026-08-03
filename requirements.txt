@@ -1,0 +1,21 @@
+# Core scientific stack
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+sympy
+
+# Models
+xgboost
+torch
+
+# Attribution
+shap
+captum
+
+# Genetic Programming backend (also provides the `geml` helper package)
+GeneticEngine
+
+# Folktables (2018 ACS) dataset access, used by setup_folktables.py
+folktables

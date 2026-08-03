@@ -1,0 +1,17 @@
+protected_attr,feature,auc,mi,abs_corr
+male,Age,0.6389,0.0286,0.1617
+male,Job,0.5328,0.0,0.0703
+male,Housing,0.6102,0.0344,0.2198
+male,Saving_accounts,0.5113,0.0098,0.0032
+male,Checking_account,0.5004,0.0,0.0012
+male,Credit_amount,0.5723,0.0046,0.0935
+male,Duration,0.5452,0.0,0.0814
+male,Purpose,0.5331,0.0274,0.0632
+age_young,Age,1.0,0.66,0.6996
+age_young,Job,0.5437,0.0209,0.0899
+age_young,Housing,0.6419,0.0816,0.2989
+age_young,Saving_accounts,0.5361,0.0017,0.0567
+age_young,Checking_account,0.5004,0.0242,0.0003
+age_young,Credit_amount,0.5322,0.0,0.0496
+age_young,Duration,0.5002,0.0306,0.0053
+age_young,Purpose,0.5451,0.0418,0.084

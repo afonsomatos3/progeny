@@ -1,0 +1,96 @@
+{
+  "task_target": "bad_risk",
+  "source": "South German Credit (Statlog), Kaggle/UCI variant with Risk column",
+  "preprocessing": {
+    "imputation": "Saving_accounts / Checking_account NaN \u2192 'missing' category",
+    "encoding": "LabelEncoder for categoricals",
+    "scaling": "StandardScaler (z-score), fit on train only"
+  },
+  "protected_attributes": {
+    "male": {
+      "group": "sex",
+      "type": "binary",
+      "definition": "Sex == 'male'"
+    },
+    "age_young": {
+      "group": "age",
+      "type": "binary",
+      "definition": "Age < 30"
+    }
+  },
+  "base_feature_columns": [
+    "Age",
+    "Job",
+    "Housing",
+    "Saving_accounts",
+    "Checking_account",
+    "Credit_amount",
+    "Duration",
+    "Purpose"
+  ],
+  "numeric_features": [
+    "Age",
+    "Job",
+    "Credit_amount",
+    "Duration"
+  ],
+  "categorical_features": [
+    "Housing",
+    "Saving_accounts",
+    "Checking_account",
+    "Purpose"
+  ],
+  "label_encodings": {
+    "Housing": [
+      "free",
+      "own",
+      "rent"
+    ],
+    "Saving_accounts": [
+      "little",
+      "missing",
+      "moderate",
+      "quite rich",
+      "rich"
+    ],
+    "Checking_account": [
+      "little",
+      "missing",
+      "moderate",
+      "rich"
+    ],
+    "Purpose": [
+      "business",
+      "car",
+      "domestic appliances",
+      "education",
+      "furniture/equipment",
+      "radio/TV",
+      "repairs",
+      "vacation/others"
+    ]
+  },
+  "scaler_mean": [
+    35.32375,
+    1.90625,
+    1.0725,
+    0.7975,
+    1.12125,
+    3189.59125,
+    20.77,
+    2.8175
+  ],
+  "scaler_std": [
+    11.038407309820562,
+    0.6422312180982797,
+    0.5312661762243119,
+    1.1732407042035353,
+    0.8840522821077946,
+    2671.8758801960535,
+    11.809936494325443,
+    1.9600239156704162
+  ],
+  "train_size": 800,
+  "test_size": 200,
+  "random_state": 42
+}

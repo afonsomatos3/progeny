@@ -1,0 +1,201 @@
+{
+  "task_target": "income_ge_50000",
+  "source": "Ding et al. (2021) Folktables ACS 2018 Adult Reconstruction",
+  "preprocessing": {
+    "imputation": "numeric=median, categorical='missing'",
+    "encoding": "LabelEncoder for categoricals",
+    "scaling": "StandardScaler (z-score), fit on train only"
+  },
+  "protected_attributes": {
+    "white": {
+      "group": "race",
+      "type": "binary"
+    },
+    "black": {
+      "group": "race",
+      "type": "binary"
+    },
+    "asian": {
+      "group": "race",
+      "type": "binary"
+    },
+    "amer_indian": {
+      "group": "race",
+      "type": "binary"
+    },
+    "other_race": {
+      "group": "race",
+      "type": "binary"
+    },
+    "gender_male": {
+      "group": "sex",
+      "type": "binary"
+    }
+  },
+  "base_feature_columns": [
+    "hours_per_week",
+    "age",
+    "capital_gain",
+    "capital_loss",
+    "workclass",
+    "education",
+    "education_num",
+    "marital_status",
+    "relationship",
+    "native_country",
+    "occupation"
+  ],
+  "numeric_features": [
+    "hours_per_week",
+    "age",
+    "capital_gain",
+    "capital_loss",
+    "education_num"
+  ],
+  "categorical_features": [
+    "workclass",
+    "education",
+    "marital_status",
+    "relationship",
+    "native_country",
+    "occupation"
+  ],
+  "label_encodings": {
+    "workclass": [
+      "?",
+      "Federal-gov",
+      "Local-gov",
+      "Never-worked",
+      "Private",
+      "Self-emp-inc",
+      "Self-emp-not-inc",
+      "State-gov",
+      "Without-pay"
+    ],
+    "education": [
+      "10th",
+      "11th",
+      "12th",
+      "1st-4th",
+      "5th-6th",
+      "7th-8th",
+      "9th",
+      "Assoc-acdm",
+      "Assoc-voc",
+      "Bachelors",
+      "Doctorate",
+      "HS-grad",
+      "Masters",
+      "Preschool",
+      "Prof-school",
+      "Some-college"
+    ],
+    "marital_status": [
+      "Divorced",
+      "Married-AF-spouse",
+      "Married-civ-spouse",
+      "Married-spouse-absent",
+      "Never-married",
+      "Separated",
+      "Widowed"
+    ],
+    "relationship": [
+      "Husband",
+      "Not-in-family",
+      "Other-relative",
+      "Own-child",
+      "Unmarried",
+      "Wife"
+    ],
+    "native_country": [
+      "?",
+      "Cambodia",
+      "Canada",
+      "China",
+      "Columbia",
+      "Cuba",
+      "Dominican-Republic",
+      "Ecuador",
+      "El-Salvador",
+      "England",
+      "France",
+      "Germany",
+      "Greece",
+      "Guatemala",
+      "Haiti",
+      "Holand-Netherlands",
+      "Honduras",
+      "Hong",
+      "Hungary",
+      "India",
+      "Iran",
+      "Ireland",
+      "Italy",
+      "Jamaica",
+      "Japan",
+      "Laos",
+      "Mexico",
+      "Nicaragua",
+      "Outlying-US(Guam-USVI-etc)",
+      "Peru",
+      "Philippines",
+      "Poland",
+      "Portugal",
+      "Puerto-Rico",
+      "Scotland",
+      "South",
+      "Taiwan",
+      "Thailand",
+      "Trinadad&Tobago",
+      "United-States",
+      "Vietnam",
+      "Yugoslavia"
+    ],
+    "occupation": [
+      "?",
+      "Adm-clerical",
+      "Armed-Forces",
+      "Craft-repair",
+      "Exec-managerial",
+      "Farming-fishing",
+      "Handlers-cleaners",
+      "Machine-op-inspct",
+      "Other-service",
+      "Priv-house-serv",
+      "Prof-specialty",
+      "Protective-serv",
+      "Sales",
+      "Tech-support",
+      "Transport-moving"
+    ]
+  },
+  "scaler_mean": [
+    40.39849586109429,
+    38.54345850999394,
+    1045.5274328689684,
+    86.22418231374924,
+    3.8688673531193216,
+    10.303780537048253,
+    10.075560266505148,
+    2.620103977387442,
+    1.4412477286493035,
+    36.765647082576216,
+    6.5761911972541895
+  ],
+  "scaler_std": [
+    12.304591898461368,
+    13.70001529379485,
+    7277.030690318977,
+    400.2805862621441,
+    1.455274341565017,
+    3.87199403632948,
+    2.5612217728199447,
+    1.5014330019171493,
+    1.6018112028656795,
+    7.739704999865561,
+    4.2253966502319305
+  ],
+  "train_size": 39624,
+  "test_size": 9907,
+  "random_state": 42
+}

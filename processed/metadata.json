@@ -1,0 +1,758 @@
+{
+  "task_target": "pass_bar",
+  "preprocessing": {
+    "column_taxonomy": "applied (leakage, redundancy, protected columns removed)",
+    "imputation": "numeric=median, categorical=mode",
+    "encoding": "label encoding for categoricals",
+    "scaling": "StandardScaler (z-score), fit on train only"
+  },
+  "protected_attributes": {
+    "black": {
+      "group": "race",
+      "type": "binary"
+    },
+    "asian": {
+      "group": "race",
+      "type": "binary"
+    },
+    "hisp": {
+      "group": "race",
+      "type": "binary"
+    },
+    "other": {
+      "group": "race",
+      "type": "binary"
+    },
+    "male": {
+      "group": "sex",
+      "type": "binary"
+    }
+  },
+  "base_feature_columns": [
+    "decile1b",
+    "decile3",
+    "decile1",
+    "cluster",
+    "lsat",
+    "ugpa",
+    "zfygpa",
+    "DOB_yr",
+    "grad",
+    "zgpa",
+    "fulltime",
+    "fam_inc",
+    "age",
+    "parttime",
+    "Dropout",
+    "tier",
+    "index6040",
+    "indxgrp",
+    "indxgrp2"
+  ],
+  "numeric_features": [
+    "decile1b",
+    "decile3",
+    "decile1",
+    "cluster",
+    "lsat",
+    "ugpa",
+    "zfygpa",
+    "DOB_yr",
+    "zgpa",
+    "fulltime",
+    "fam_inc",
+    "age",
+    "parttime",
+    "tier",
+    "index6040"
+  ],
+  "categorical_features": [
+    "grad",
+    "Dropout",
+    "indxgrp",
+    "indxgrp2"
+  ],
+  "label_encodings": {
+    "grad": [
+      "O",
+      "X",
+      "Y"
+    ],
+    "Dropout": [
+      "NO",
+      "YES"
+    ],
+    "indxgrp": [
+      "a under 400",
+      "b 400-460",
+      "c 460-520",
+      "d 520-580",
+      "e 580-640",
+      "f 640-700",
+      "g 700+"
+    ],
+    "indxgrp2": [
+      "a under 400",
+      "b 400-460",
+      "c 460-520",
+      "d 520-580",
+      "e 580-640",
+      "f 640-700",
+      "g 700-760",
+      "h 760-820",
+      "i 820+"
+    ]
+  },
+  "scaler_mean": [
+    5.5536401673640166,
+    5.559051603905161,
+    5.715704323570432,
+    2.8164016736401676,
+    36.76286750348673,
+    3.213601115760108,
+    0.08326806136680583,
+    65.45668061366806,
+    1.9960390516039053,
+    0.007818131101813099,
+    1.0754253835425382,
+    3.470739191073919,
+    -59.09712691771269,
+    0.07542538354253836,
+    5.578800557880056e-05,
+    3.763682008368201,
+    743.9316854248988,
+    5.429511854951185,
+    6.116317991631799
+  ],
+  "scaler_std": [
+    2.7536072446825997,
+    2.7472694076435458,
+    2.710187704008327,
+    1.3798465321645732,
+    5.501469536709067,
+    0.40480820383924115,
+    0.9054727625279869,
+    5.144915907278502,
+    0.06369329081666505,
+    0.9517527827079382,
+    0.26407649471316774,
+    0.8510196593322699,
+    5.237286669804795,
+    0.26407649471316774,
+    0.007468928522699827,
+    1.1760738168714386,
+    104.27906284162572,
+    1.0189881553473181,
+    1.583958584391766
+  ],
+  "train_size": 17925,
+  "test_size": 4482,
+  "random_state": 42,
+  "individual_proxy_baselines": {
+    "black": {
+      "group": "race",
+      "per_feature": {
+        "index6040": {
+          "auc": 0.8656,
+          "mi": 0.0648,
+          "abs_corr": 0.3625,
+          "corr_pval": 0.0
+        },
+        "indxgrp2": {
+          "auc": 0.8596,
+          "mi": 0.0635,
+          "abs_corr": 0.3793,
+          "corr_pval": 0.0
+        },
+        "indxgrp": {
+          "auc": 0.8457,
+          "mi": 0.0624,
+          "abs_corr": 0.4414,
+          "corr_pval": 0.0
+        },
+        "lsat": {
+          "auc": 0.8412,
+          "mi": 0.0553,
+          "abs_corr": 0.3396,
+          "corr_pval": 0.0
+        },
+        "zgpa": {
+          "auc": 0.7753,
+          "mi": 0.0323,
+          "abs_corr": 0.2466,
+          "corr_pval": 0.0
+        },
+        "zfygpa": {
+          "auc": 0.7674,
+          "mi": 0.0322,
+          "abs_corr": 0.2431,
+          "corr_pval": 0.0
+        },
+        "decile3": {
+          "auc": 0.7635,
+          "mi": 0.0306,
+          "abs_corr": 0.2239,
+          "corr_pval": 0.0
+        },
+        "decile1": {
+          "auc": 0.7608,
+          "mi": 0.0294,
+          "abs_corr": 0.2234,
+          "corr_pval": 0.0
+        },
+        "decile1b": {
+          "auc": 0.7534,
+          "mi": 0.0279,
+          "abs_corr": 0.2151,
+          "corr_pval": 0.0
+        },
+        "ugpa": {
+          "auc": 0.7272,
+          "mi": 0.0204,
+          "abs_corr": 0.2052,
+          "corr_pval": 0.0
+        },
+        "fam_inc": {
+          "auc": 0.6752,
+          "mi": 0.0131,
+          "abs_corr": 0.1667,
+          "corr_pval": 0.0
+        },
+        "cluster": {
+          "auc": 0.5734,
+          "mi": 0.016,
+          "abs_corr": 0.0838,
+          "corr_pval": 0.0
+        },
+        "tier": {
+          "auc": 0.5367,
+          "mi": 0.016,
+          "abs_corr": 0.0599,
+          "corr_pval": 0.0
+        },
+        "DOB_yr": {
+          "auc": 0.5203,
+          "mi": 0.001,
+          "abs_corr": 0.0091,
+          "corr_pval": 0.223112
+        },
+        "grad": {
+          "auc": 0.5053,
+          "mi": 0.0005,
+          "abs_corr": 0.0393,
+          "corr_pval": 0.0
+        },
+        "fulltime": {
+          "auc": 0.5033,
+          "mi": 0.0,
+          "abs_corr": 0.006,
+          "corr_pval": 0.422426
+        },
+        "parttime": {
+          "auc": 0.5033,
+          "mi": 0.0,
+          "abs_corr": 0.006,
+          "corr_pval": 0.422426
+        },
+        "Dropout": {
+          "auc": 0.5,
+          "mi": 0.0,
+          "abs_corr": 0.0019,
+          "corr_pval": 0.799731
+        },
+        "age": {
+          "auc": 0.4982,
+          "mi": 0.0011,
+          "abs_corr": 0.0014,
+          "corr_pval": 0.849515
+        }
+      },
+      "best_feature_auc": "index6040",
+      "best_auc": 0.8656
+    },
+    "asian": {
+      "group": "race",
+      "per_feature": {
+        "zgpa": {
+          "auc": 0.6305,
+          "mi": 0.0043,
+          "abs_corr": 0.0874,
+          "corr_pval": 0.0
+        },
+        "decile3": {
+          "auc": 0.6288,
+          "mi": 0.0044,
+          "abs_corr": 0.0886,
+          "corr_pval": 0.0
+        },
+        "zfygpa": {
+          "auc": 0.6223,
+          "mi": 0.0042,
+          "abs_corr": 0.0806,
+          "corr_pval": 0.0
+        },
+        "decile1": {
+          "auc": 0.6218,
+          "mi": 0.0041,
+          "abs_corr": 0.0834,
+          "corr_pval": 0.0
+        },
+        "decile1b": {
+          "auc": 0.6157,
+          "mi": 0.0038,
+          "abs_corr": 0.0794,
+          "corr_pval": 0.0
+        },
+        "tier": {
+          "auc": 0.6021,
+          "mi": 0.0036,
+          "abs_corr": 0.0735,
+          "corr_pval": 0.0
+        },
+        "cluster": {
+          "auc": 0.5846,
+          "mi": 0.0035,
+          "abs_corr": 0.0526,
+          "corr_pval": 0.0
+        },
+        "DOB_yr": {
+          "auc": 0.5673,
+          "mi": 0.0022,
+          "abs_corr": 0.0517,
+          "corr_pval": 0.0
+        },
+        "age": {
+          "auc": 0.5567,
+          "mi": 0.0023,
+          "abs_corr": 0.0479,
+          "corr_pval": 0.0
+        },
+        "indxgrp": {
+          "auc": 0.54,
+          "mi": 0.0011,
+          "abs_corr": 0.026,
+          "corr_pval": 0.00051
+        },
+        "fam_inc": {
+          "auc": 0.5315,
+          "mi": 0.0006,
+          "abs_corr": 0.0287,
+          "corr_pval": 0.000121
+        },
+        "lsat": {
+          "auc": 0.5297,
+          "mi": 0.0013,
+          "abs_corr": 0.018,
+          "corr_pval": 0.01611
+        },
+        "index6040": {
+          "auc": 0.5262,
+          "mi": 0.0015,
+          "abs_corr": 0.0144,
+          "corr_pval": 0.053562
+        },
+        "indxgrp2": {
+          "auc": 0.5254,
+          "mi": 0.0014,
+          "abs_corr": 0.0178,
+          "corr_pval": 0.017426
+        },
+        "fulltime": {
+          "auc": 0.5163,
+          "mi": 0.0003,
+          "abs_corr": 0.0243,
+          "corr_pval": 0.001126
+        },
+        "parttime": {
+          "auc": 0.5163,
+          "mi": 0.0003,
+          "abs_corr": 0.0243,
+          "corr_pval": 0.001126
+        },
+        "grad": {
+          "auc": 0.503,
+          "mi": 0.0001,
+          "abs_corr": 0.0184,
+          "corr_pval": 0.013993
+        },
+        "ugpa": {
+          "auc": 0.5021,
+          "mi": 0.0003,
+          "abs_corr": 0.0014,
+          "corr_pval": 0.848546
+        },
+        "Dropout": {
+          "auc": 0.5,
+          "mi": 0.0,
+          "abs_corr": 0.0015,
+          "corr_pval": 0.837339
+        }
+      },
+      "best_feature_auc": "zgpa",
+      "best_auc": 0.6305
+    },
+    "hisp": {
+      "group": "race",
+      "per_feature": {
+        "index6040": {
+          "auc": 0.7137,
+          "mi": 0.0021,
+          "abs_corr": 0.0592,
+          "corr_pval": 0.0
+        },
+        "indxgrp2": {
+          "auc": 0.7053,
+          "mi": 0.0016,
+          "abs_corr": 0.0588,
+          "corr_pval": 0.0
+        },
+        "zgpa": {
+          "auc": 0.695,
+          "mi": 0.0014,
+          "abs_corr": 0.0496,
+          "corr_pval": 0.0
+        },
+        "decile3": {
+          "auc": 0.6911,
+          "mi": 0.0015,
+          "abs_corr": 0.0475,
+          "corr_pval": 0.0
+        },
+        "zfygpa": {
+          "auc": 0.6902,
+          "mi": 0.0018,
+          "abs_corr": 0.0513,
+          "corr_pval": 0.0
+        },
+        "indxgrp": {
+          "auc": 0.6864,
+          "mi": 0.0016,
+          "abs_corr": 0.0641,
+          "corr_pval": 0.0
+        },
+        "decile1b": {
+          "auc": 0.6859,
+          "mi": 0.0014,
+          "abs_corr": 0.0464,
+          "corr_pval": 0.0
+        },
+        "lsat": {
+          "auc": 0.6831,
+          "mi": 0.0016,
+          "abs_corr": 0.0496,
+          "corr_pval": 0.0
+        },
+        "decile1": {
+          "auc": 0.6822,
+          "mi": 0.0014,
+          "abs_corr": 0.0457,
+          "corr_pval": 0.0
+        },
+        "fam_inc": {
+          "auc": 0.6807,
+          "mi": 0.0012,
+          "abs_corr": 0.0509,
+          "corr_pval": 0.0
+        },
+        "ugpa": {
+          "auc": 0.6715,
+          "mi": 0.0015,
+          "abs_corr": 0.046,
+          "corr_pval": 0.0
+        },
+        "DOB_yr": {
+          "auc": 0.6243,
+          "mi": 0.0005,
+          "abs_corr": 0.0238,
+          "corr_pval": 0.00142
+        },
+        "age": {
+          "auc": 0.6037,
+          "mi": 0.0004,
+          "abs_corr": 0.0212,
+          "corr_pval": 0.004494
+        },
+        "cluster": {
+          "auc": 0.5727,
+          "mi": 0.0007,
+          "abs_corr": 0.0163,
+          "corr_pval": 0.029041
+        },
+        "fulltime": {
+          "auc": 0.509,
+          "mi": 0.0,
+          "abs_corr": 0.0047,
+          "corr_pval": 0.525
+        },
+        "parttime": {
+          "auc": 0.509,
+          "mi": 0.0,
+          "abs_corr": 0.0047,
+          "corr_pval": 0.525
+        },
+        "tier": {
+          "auc": 0.5022,
+          "mi": 0.0007,
+          "abs_corr": 0.0058,
+          "corr_pval": 0.440559
+        },
+        "Dropout": {
+          "auc": 0.5,
+          "mi": 0.0,
+          "abs_corr": 0.0005,
+          "corr_pval": 0.944326
+        },
+        "grad": {
+          "auc": 0.498,
+          "mi": 0.0,
+          "abs_corr": 0.0043,
+          "corr_pval": 0.560954
+        }
+      },
+      "best_feature_auc": "index6040",
+      "best_auc": 0.7137
+    },
+    "other": {
+      "group": "race",
+      "per_feature": {
+        "index6040": {
+          "auc": 0.5894,
+          "mi": 0.0017,
+          "abs_corr": 0.0472,
+          "corr_pval": 0.0
+        },
+        "indxgrp2": {
+          "auc": 0.5856,
+          "mi": 0.0014,
+          "abs_corr": 0.0472,
+          "corr_pval": 0.0
+        },
+        "indxgrp": {
+          "auc": 0.5836,
+          "mi": 0.0013,
+          "abs_corr": 0.0532,
+          "corr_pval": 0.0
+        },
+        "lsat": {
+          "auc": 0.58,
+          "mi": 0.0014,
+          "abs_corr": 0.0428,
+          "corr_pval": 0.0
+        },
+        "zgpa": {
+          "auc": 0.5718,
+          "mi": 0.0009,
+          "abs_corr": 0.0335,
+          "corr_pval": 7e-06
+        },
+        "decile3": {
+          "auc": 0.5717,
+          "mi": 0.001,
+          "abs_corr": 0.034,
+          "corr_pval": 5e-06
+        },
+        "zfygpa": {
+          "auc": 0.5693,
+          "mi": 0.0014,
+          "abs_corr": 0.0338,
+          "corr_pval": 6e-06
+        },
+        "decile1b": {
+          "auc": 0.5671,
+          "mi": 0.0006,
+          "abs_corr": 0.0316,
+          "corr_pval": 2.4e-05
+        },
+        "ugpa": {
+          "auc": 0.5649,
+          "mi": 0.0009,
+          "abs_corr": 0.0299,
+          "corr_pval": 6.3e-05
+        },
+        "decile1": {
+          "auc": 0.5641,
+          "mi": 0.0008,
+          "abs_corr": 0.0306,
+          "corr_pval": 4.1e-05
+        },
+        "fam_inc": {
+          "auc": 0.5626,
+          "mi": 0.0009,
+          "abs_corr": 0.0354,
+          "corr_pval": 2e-06
+        },
+        "cluster": {
+          "auc": 0.529,
+          "mi": 0.0002,
+          "abs_corr": 0.0141,
+          "corr_pval": 0.058315
+        },
+        "tier": {
+          "auc": 0.5229,
+          "mi": 0.0002,
+          "abs_corr": 0.0092,
+          "corr_pval": 0.21939
+        },
+        "DOB_yr": {
+          "auc": 0.5165,
+          "mi": 0.0003,
+          "abs_corr": 0.0044,
+          "corr_pval": 0.553785
+        },
+        "age": {
+          "auc": 0.5105,
+          "mi": 0.0005,
+          "abs_corr": 0.0036,
+          "corr_pval": 0.62625
+        },
+        "parttime": {
+          "auc": 0.5071,
+          "mi": 0.0,
+          "abs_corr": 0.0071,
+          "corr_pval": 0.338729
+        },
+        "fulltime": {
+          "auc": 0.5071,
+          "mi": 0.0,
+          "abs_corr": 0.0071,
+          "corr_pval": 0.338729
+        },
+        "grad": {
+          "auc": 0.502,
+          "mi": 0.0001,
+          "abs_corr": 0.0085,
+          "corr_pval": 0.257907
+        },
+        "Dropout": {
+          "auc": 0.5,
+          "mi": 0.0,
+          "abs_corr": 0.001,
+          "corr_pval": 0.891913
+        }
+      },
+      "best_feature_auc": "index6040",
+      "best_auc": 0.5894
+    },
+    "male": {
+      "group": "sex",
+      "per_feature": {
+        "ugpa": {
+          "auc": 0.5794,
+          "mi": 0.0107,
+          "abs_corr": 0.1408,
+          "corr_pval": 0.0
+        },
+        "lsat": {
+          "auc": 0.5449,
+          "mi": 0.0037,
+          "abs_corr": 0.0818,
+          "corr_pval": 0.0
+        },
+        "fam_inc": {
+          "auc": 0.525,
+          "mi": 0.0015,
+          "abs_corr": 0.0468,
+          "corr_pval": 0.0
+        },
+        "zfygpa": {
+          "auc": 0.5246,
+          "mi": 0.0016,
+          "abs_corr": 0.041,
+          "corr_pval": 0.0
+        },
+        "decile1": {
+          "auc": 0.5234,
+          "mi": 0.0011,
+          "abs_corr": 0.0404,
+          "corr_pval": 0.0
+        },
+        "decile1b": {
+          "auc": 0.522,
+          "mi": 0.001,
+          "abs_corr": 0.0381,
+          "corr_pval": 0.0
+        },
+        "cluster": {
+          "auc": 0.5149,
+          "mi": 0.0011,
+          "abs_corr": 0.0279,
+          "corr_pval": 0.000182
+        },
+        "tier": {
+          "auc": 0.5052,
+          "mi": 0.0012,
+          "abs_corr": 0.0076,
+          "corr_pval": 0.308116
+        },
+        "index6040": {
+          "auc": 0.5037,
+          "mi": 0.0008,
+          "abs_corr": 0.0135,
+          "corr_pval": 0.070397
+        },
+        "indxgrp2": {
+          "auc": 0.5028,
+          "mi": 0.0005,
+          "abs_corr": 0.0103,
+          "corr_pval": 0.168898
+        },
+        "indxgrp": {
+          "auc": 0.5019,
+          "mi": 0.0004,
+          "abs_corr": 0.0141,
+          "corr_pval": 0.059898
+        },
+        "decile3": {
+          "auc": 0.5012,
+          "mi": 0.0003,
+          "abs_corr": 0.0018,
+          "corr_pval": 0.807675
+        },
+        "grad": {
+          "auc": 0.5007,
+          "mi": 0.0001,
+          "abs_corr": 0.0092,
+          "corr_pval": 0.217482
+        },
+        "fulltime": {
+          "auc": 0.5006,
+          "mi": 0.0,
+          "abs_corr": 0.0023,
+          "corr_pval": 0.753861
+        },
+        "parttime": {
+          "auc": 0.5006,
+          "mi": 0.0,
+          "abs_corr": 0.0023,
+          "corr_pval": 0.753861
+        },
+        "Dropout": {
+          "auc": 0.5001,
+          "mi": 0.0,
+          "abs_corr": 0.0084,
+          "corr_pval": 0.258997
+        },
+        "zgpa": {
+          "auc": 0.4988,
+          "mi": 0.0006,
+          "abs_corr": 0.0004,
+          "corr_pval": 0.9554
+        },
+        "age": {
+          "auc": 0.4826,
+          "mi": 0.0042,
+          "abs_corr": 0.0246,
+          "corr_pval": 0.000996
+        },
+        "DOB_yr": {
+          "auc": 0.4773,
+          "mi": 0.005,
+          "abs_corr": 0.0256,
+          "corr_pval": 0.000617
+        }
+      },
+      "best_feature_auc": "ugpa",
+      "best_auc": 0.5794
+    }
+  }
+}

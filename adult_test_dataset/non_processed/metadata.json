@@ -1,0 +1,988 @@
+{
+  "task_target": "target_binary",
+  "preprocessing": {
+    "description": "NO column taxonomy applied. No manual exclusion of protected columns from features. No imputation. No scaling. Categoricals are label-encoded. Only derived binary protected attributes are excluded from features.",
+    "column_taxonomy": "none",
+    "imputation": "none",
+    "scaling": "none",
+    "encoding": "label encoding for categoricals"
+  },
+  "protected_attributes": {
+    "black": {
+      "group": "race",
+      "type": "binary"
+    },
+    "white": {
+      "group": "race",
+      "type": "binary"
+    },
+    "asian_pac_islander": {
+      "group": "race",
+      "type": "binary"
+    },
+    "amer_indian": {
+      "group": "race",
+      "type": "binary"
+    },
+    "other": {
+      "group": "race",
+      "type": "binary"
+    },
+    "male": {
+      "group": "sex",
+      "type": "binary"
+    }
+  },
+  "base_feature_columns": [
+    "Age",
+    "Workclass",
+    "fnlwgt",
+    "Education",
+    "Education_Num",
+    "Martial_Status",
+    "Occupation",
+    "Relationship",
+    "Race",
+    "Sex",
+    "Capital_Gain",
+    "Capital_Loss",
+    "Hours_per_week",
+    "Country"
+  ],
+  "numeric_features": [
+    "fnlwgt",
+    "Education_Num",
+    "Capital_Gain",
+    "Capital_Loss",
+    "Hours_per_week"
+  ],
+  "categorical_features": [
+    "Age",
+    "Workclass",
+    "Education",
+    "Martial_Status",
+    "Occupation",
+    "Relationship",
+    "Race",
+    "Sex",
+    "Country"
+  ],
+  "label_encodings": {
+    "Age": [
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30",
+      "31",
+      "32",
+      "33",
+      "34",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45",
+      "46",
+      "47",
+      "48",
+      "49",
+      "50",
+      "51",
+      "52",
+      "53",
+      "54",
+      "55",
+      "56",
+      "57",
+      "58",
+      "59",
+      "60",
+      "61",
+      "62",
+      "63",
+      "64",
+      "65",
+      "66",
+      "67",
+      "68",
+      "69",
+      "70",
+      "71",
+      "72",
+      "73",
+      "74",
+      "75",
+      "76",
+      "77",
+      "78",
+      "79",
+      "80",
+      "81",
+      "82",
+      "83",
+      "84",
+      "85",
+      "87",
+      "88",
+      "89",
+      "90"
+    ],
+    "Workclass": [
+      "Federal-gov",
+      "Local-gov",
+      "Never-worked",
+      "Private",
+      "Self-emp-inc",
+      "Self-emp-not-inc",
+      "State-gov",
+      "Without-pay",
+      "__missing__"
+    ],
+    "Education": [
+      "10th",
+      "11th",
+      "12th",
+      "1st-4th",
+      "5th-6th",
+      "7th-8th",
+      "9th",
+      "Assoc-acdm",
+      "Assoc-voc",
+      "Bachelors",
+      "Doctorate",
+      "HS-grad",
+      "Masters",
+      "Preschool",
+      "Prof-school",
+      "Some-college"
+    ],
+    "Martial_Status": [
+      "Divorced",
+      "Married-AF-spouse",
+      "Married-civ-spouse",
+      "Married-spouse-absent",
+      "Never-married",
+      "Separated",
+      "Widowed"
+    ],
+    "Occupation": [
+      "Adm-clerical",
+      "Armed-Forces",
+      "Craft-repair",
+      "Exec-managerial",
+      "Farming-fishing",
+      "Handlers-cleaners",
+      "Machine-op-inspct",
+      "Other-service",
+      "Priv-house-serv",
+      "Prof-specialty",
+      "Protective-serv",
+      "Sales",
+      "Tech-support",
+      "Transport-moving",
+      "__missing__"
+    ],
+    "Relationship": [
+      "Husband",
+      "Not-in-family",
+      "Other-relative",
+      "Own-child",
+      "Unmarried",
+      "Wife"
+    ],
+    "Race": [
+      "Amer-Indian-Eskimo",
+      "Asian-Pac-Islander",
+      "Black",
+      "Other",
+      "White"
+    ],
+    "Sex": [
+      "Female",
+      "Male"
+    ],
+    "Country": [
+      "Cambodia",
+      "Canada",
+      "China",
+      "Columbia",
+      "Cuba",
+      "Dominican-Republic",
+      "Ecuador",
+      "El-Salvador",
+      "England",
+      "France",
+      "Germany",
+      "Greece",
+      "Guatemala",
+      "Haiti",
+      "Honduras",
+      "Hong",
+      "Hungary",
+      "India",
+      "Iran",
+      "Ireland",
+      "Italy",
+      "Jamaica",
+      "Japan",
+      "Laos",
+      "Mexico",
+      "Nicaragua",
+      "Outlying-US(Guam-USVI-etc)",
+      "Peru",
+      "Philippines",
+      "Poland",
+      "Portugal",
+      "Puerto-Rico",
+      "Scotland",
+      "South",
+      "Taiwan",
+      "Thailand",
+      "Trinadad&Tobago",
+      "United-States",
+      "Vietnam",
+      "Yugoslavia",
+      "__missing__"
+    ]
+  },
+  "missing_values": {
+    "Workclass": 963,
+    "Occupation": 966,
+    "Country": 274
+  },
+  "train_size": 13024,
+  "test_size": 3257,
+  "random_state": 42,
+  "individual_proxy_baselines": {
+    "black": {
+      "group": "race",
+      "per_feature": {
+        "Race": {
+          "auc": 0.9559,
+          "mi": 0.3146,
+          "abs_corr": 0.6443,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Relationship": {
+          "auc": 0.633,
+          "mi": 0.0129,
+          "abs_corr": 0.1356,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "fnlwgt": {
+          "auc": 0.6252,
+          "mi": 0.01,
+          "abs_corr": 0.1439,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Martial_Status": {
+          "auc": 0.5884,
+          "mi": 0.0096,
+          "abs_corr": 0.0864,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Sex": {
+          "auc": 0.5814,
+          "mi": 0.0049,
+          "abs_corr": 0.1014,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Education_Num": {
+          "auc": 0.5783,
+          "mi": 0.0046,
+          "abs_corr": 0.0752,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Hours_per_week": {
+          "auc": 0.5545,
+          "mi": 0.0072,
+          "abs_corr": 0.0398,
+          "corr_pval": 5e-06,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Workclass": {
+          "auc": 0.5451,
+          "mi": 0.0061,
+          "abs_corr": 0.0324,
+          "corr_pval": 0.000212,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Country": {
+          "auc": 0.5155,
+          "mi": 0.0094,
+          "abs_corr": 0.0202,
+          "corr_pval": 0.020892,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Age": {
+          "auc": 0.5146,
+          "mi": 0.0014,
+          "abs_corr": 0.0184,
+          "corr_pval": 0.035526,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Education": {
+          "auc": 0.5146,
+          "mi": 0.0046,
+          "abs_corr": 0.0305,
+          "corr_pval": 0.000503,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Capital_Gain": {
+          "auc": 0.5138,
+          "mi": 0.0007,
+          "abs_corr": 0.0234,
+          "corr_pval": 0.007549,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Capital_Loss": {
+          "auc": 0.5055,
+          "mi": 0.0008,
+          "abs_corr": 0.0188,
+          "corr_pval": 0.032242,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Occupation": {
+          "auc": 0.4994,
+          "mi": 0.0112,
+          "abs_corr": 0.0019,
+          "corr_pval": 0.830514,
+          "n_valid": 13024,
+          "n_missing": 0
+        }
+      },
+      "best_feature_auc": "Race",
+      "best_auc": 0.9559
+    },
+    "white": {
+      "group": "race",
+      "per_feature": {
+        "Race": {
+          "auc": 1.0,
+          "mi": 0.411,
+          "abs_corr": 0.9529,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Relationship": {
+          "auc": 0.6069,
+          "mi": 0.0125,
+          "abs_corr": 0.1302,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Martial_Status": {
+          "auc": 0.5733,
+          "mi": 0.0083,
+          "abs_corr": 0.0864,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Sex": {
+          "auc": 0.5629,
+          "mi": 0.0042,
+          "abs_corr": 0.0936,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Hours_per_week": {
+          "auc": 0.5493,
+          "mi": 0.0075,
+          "abs_corr": 0.044,
+          "corr_pval": 1e-06,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "fnlwgt": {
+          "auc": 0.5482,
+          "mi": 0.0045,
+          "abs_corr": 0.0812,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Country": {
+          "auc": 0.5476,
+          "mi": 0.0332,
+          "abs_corr": 0.1135,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Education_Num": {
+          "auc": 0.5402,
+          "mi": 0.0022,
+          "abs_corr": 0.0503,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Workclass": {
+          "auc": 0.5371,
+          "mi": 0.007,
+          "abs_corr": 0.0311,
+          "corr_pval": 0.000393,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Age": {
+          "auc": 0.5231,
+          "mi": 0.002,
+          "abs_corr": 0.032,
+          "corr_pval": 0.000259,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Capital_Gain": {
+          "auc": 0.5106,
+          "mi": 0.0008,
+          "abs_corr": 0.0133,
+          "corr_pval": 0.129255,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Education": {
+          "auc": 0.5088,
+          "mi": 0.0022,
+          "abs_corr": 0.0234,
+          "corr_pval": 0.007593,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Capital_Loss": {
+          "auc": 0.5053,
+          "mi": 0.0009,
+          "abs_corr": 0.0208,
+          "corr_pval": 0.017871,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Occupation": {
+          "auc": 0.5009,
+          "mi": 0.0096,
+          "abs_corr": 0.0033,
+          "corr_pval": 0.707045,
+          "n_valid": 13024,
+          "n_missing": 0
+        }
+      },
+      "best_feature_auc": "Race",
+      "best_auc": 1.0
+    },
+    "asian_pac_islander": {
+      "group": "race",
+      "per_feature": {
+        "Race": {
+          "auc": 0.9899,
+          "mi": 0.1354,
+          "abs_corr": 0.5596,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Country": {
+          "auc": 0.6979,
+          "mi": 0.0544,
+          "abs_corr": 0.2215,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Education_Num": {
+          "auc": 0.6222,
+          "mi": 0.0043,
+          "abs_corr": 0.0698,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "fnlwgt": {
+          "auc": 0.5943,
+          "mi": 0.0041,
+          "abs_corr": 0.0452,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Occupation": {
+          "auc": 0.53,
+          "mi": 0.0021,
+          "abs_corr": 0.0173,
+          "corr_pval": 0.048044,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Martial_Status": {
+          "auc": 0.5235,
+          "mi": 0.002,
+          "abs_corr": 0.0161,
+          "corr_pval": 0.066202,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Hours_per_week": {
+          "auc": 0.518,
+          "mi": 0.0013,
+          "abs_corr": 0.0103,
+          "corr_pval": 0.238336,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Education": {
+          "auc": 0.5143,
+          "mi": 0.0043,
+          "abs_corr": 0.0184,
+          "corr_pval": 0.035639,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Workclass": {
+          "auc": 0.5093,
+          "mi": 0.0009,
+          "abs_corr": 0.0091,
+          "corr_pval": 0.298701,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Capital_Gain": {
+          "auc": 0.508,
+          "mi": 0.0006,
+          "abs_corr": 0.0182,
+          "corr_pval": 0.037921,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Age": {
+          "auc": 0.507,
+          "mi": 0.0016,
+          "abs_corr": 0.0058,
+          "corr_pval": 0.504862,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Relationship": {
+          "auc": 0.5067,
+          "mi": 0.0011,
+          "abs_corr": 0.0044,
+          "corr_pval": 0.614874,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Sex": {
+          "auc": 0.5015,
+          "mi": 0.0,
+          "abs_corr": 0.0011,
+          "corr_pval": 0.902198,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Capital_Loss": {
+          "auc": 0.5,
+          "mi": 0.0002,
+          "abs_corr": 0.0009,
+          "corr_pval": 0.91678,
+          "n_valid": 13024,
+          "n_missing": 0
+        }
+      },
+      "best_feature_auc": "Race",
+      "best_auc": 0.9899
+    },
+    "amer_indian": {
+      "group": "race",
+      "per_feature": {
+        "Race": {
+          "auc": 1.0,
+          "mi": 0.0549,
+          "abs_corr": 0.4327,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "fnlwgt": {
+          "auc": 0.7166,
+          "mi": 0.0036,
+          "abs_corr": 0.0637,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Relationship": {
+          "auc": 0.5987,
+          "mi": 0.001,
+          "abs_corr": 0.0334,
+          "corr_pval": 0.00014,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Workclass": {
+          "auc": 0.5981,
+          "mi": 0.0019,
+          "abs_corr": 0.0317,
+          "corr_pval": 0.000294,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Education_Num": {
+          "auc": 0.5696,
+          "mi": 0.0016,
+          "abs_corr": 0.0245,
+          "corr_pval": 0.005189,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Age": {
+          "auc": 0.5594,
+          "mi": 0.001,
+          "abs_corr": 0.022,
+          "corr_pval": 0.011914,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Sex": {
+          "auc": 0.5585,
+          "mi": 0.0003,
+          "abs_corr": 0.0244,
+          "corr_pval": 0.005383,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Occupation": {
+          "auc": 0.5424,
+          "mi": 0.0011,
+          "abs_corr": 0.0148,
+          "corr_pval": 0.091958,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Hours_per_week": {
+          "auc": 0.5349,
+          "mi": 0.0007,
+          "abs_corr": 0.0072,
+          "corr_pval": 0.412184,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Martial_Status": {
+          "auc": 0.5332,
+          "mi": 0.0006,
+          "abs_corr": 0.0105,
+          "corr_pval": 0.23179,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Capital_Gain": {
+          "auc": 0.5331,
+          "mi": 0.0005,
+          "abs_corr": 0.0113,
+          "corr_pval": 0.196176,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Education": {
+          "auc": 0.5322,
+          "mi": 0.0016,
+          "abs_corr": 0.0046,
+          "corr_pval": 0.603305,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Country": {
+          "auc": 0.5206,
+          "mi": 0.0008,
+          "abs_corr": 0.0196,
+          "corr_pval": 0.025008,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Capital_Loss": {
+          "auc": 0.5075,
+          "mi": 0.0002,
+          "abs_corr": 0.0076,
+          "corr_pval": 0.388094,
+          "n_valid": 13024,
+          "n_missing": 0
+        }
+      },
+      "best_feature_auc": "Race",
+      "best_auc": 1.0
+    },
+    "other": {
+      "group": "race",
+      "per_feature": {
+        "Race": {
+          "auc": 0.8637,
+          "mi": 0.0473,
+          "abs_corr": 0.0723,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Country": {
+          "auc": 0.6966,
+          "mi": 0.0064,
+          "abs_corr": 0.1087,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Education_Num": {
+          "auc": 0.6354,
+          "mi": 0.0026,
+          "abs_corr": 0.0564,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Age": {
+          "auc": 0.5993,
+          "mi": 0.0013,
+          "abs_corr": 0.0294,
+          "corr_pval": 0.00079,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Education": {
+          "auc": 0.5685,
+          "mi": 0.0026,
+          "abs_corr": 0.0317,
+          "corr_pval": 0.000303,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Relationship": {
+          "auc": 0.5641,
+          "mi": 0.0009,
+          "abs_corr": 0.0199,
+          "corr_pval": 0.023169,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Hours_per_week": {
+          "auc": 0.5615,
+          "mi": 0.0011,
+          "abs_corr": 0.0138,
+          "corr_pval": 0.114261,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Martial_Status": {
+          "auc": 0.5462,
+          "mi": 0.0004,
+          "abs_corr": 0.0128,
+          "corr_pval": 0.1448,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Occupation": {
+          "auc": 0.5372,
+          "mi": 0.0006,
+          "abs_corr": 0.0101,
+          "corr_pval": 0.248259,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Capital_Loss": {
+          "auc": 0.5138,
+          "mi": 0.0004,
+          "abs_corr": 0.0131,
+          "corr_pval": 0.135206,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Sex": {
+          "auc": 0.5128,
+          "mi": 0.0,
+          "abs_corr": 0.0049,
+          "corr_pval": 0.576109,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Workclass": {
+          "auc": 0.5009,
+          "mi": 0.0003,
+          "abs_corr": 0.0023,
+          "corr_pval": 0.795336,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "fnlwgt": {
+          "auc": 0.4976,
+          "mi": 0.0005,
+          "abs_corr": 0.0023,
+          "corr_pval": 0.797108,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Capital_Gain": {
+          "auc": 0.4968,
+          "mi": 0.0002,
+          "abs_corr": 0.0024,
+          "corr_pval": 0.783769,
+          "n_valid": 13024,
+          "n_missing": 0
+        }
+      },
+      "best_feature_auc": "Race",
+      "best_auc": 0.8637
+    },
+    "male": {
+      "group": "sex",
+      "per_feature": {
+        "Sex": {
+          "auc": 1.0,
+          "mi": 0.6363,
+          "abs_corr": 1.0,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Relationship": {
+          "auc": 0.858,
+          "mi": 0.27,
+          "abs_corr": 0.5748,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Hours_per_week": {
+          "auc": 0.6558,
+          "mi": 0.0345,
+          "abs_corr": 0.2353,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Martial_Status": {
+          "auc": 0.5851,
+          "mi": 0.1113,
+          "abs_corr": 0.122,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Age": {
+          "auc": 0.5555,
+          "mi": 0.0081,
+          "abs_corr": 0.0785,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Race": {
+          "auc": 0.5341,
+          "mi": 0.0053,
+          "abs_corr": 0.0833,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Capital_Gain": {
+          "auc": 0.5181,
+          "mi": 0.0037,
+          "abs_corr": 0.0433,
+          "corr_pval": 1e-06,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Education": {
+          "auc": 0.5174,
+          "mi": 0.0047,
+          "abs_corr": 0.0219,
+          "corr_pval": 0.012546,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "fnlwgt": {
+          "auc": 0.5168,
+          "mi": 0.0014,
+          "abs_corr": 0.0229,
+          "corr_pval": 0.009049,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Capital_Loss": {
+          "auc": 0.5104,
+          "mi": 0.0023,
+          "abs_corr": 0.0494,
+          "corr_pval": 0.0,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Occupation": {
+          "auc": 0.5079,
+          "mi": 0.0989,
+          "abs_corr": 0.0139,
+          "corr_pval": 0.111712,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Country": {
+          "auc": 0.5074,
+          "mi": 0.0025,
+          "abs_corr": 0.0194,
+          "corr_pval": 0.026618,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Education_Num": {
+          "auc": 0.5038,
+          "mi": 0.0047,
+          "abs_corr": 0.0117,
+          "corr_pval": 0.181033,
+          "n_valid": 13024,
+          "n_missing": 0
+        },
+        "Workclass": {
+          "auc": 0.4798,
+          "mi": 0.0121,
+          "abs_corr": 0.0028,
+          "corr_pval": 0.748025,
+          "n_valid": 13024,
+          "n_missing": 0
+        }
+      },
+      "best_feature_auc": "Sex",
+      "best_auc": 1.0
+    }
+  }
+}
